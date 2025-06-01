@@ -45,9 +45,53 @@
             <button class="btn btn-outline-success m-1" type="submit" onclick="window.open('./index.html', '_parent')">
               Home
             </button>
-            <button class="btn btn-outline-success m-1" type="submit">
+            <button class="btn btn-outline-success m-1" type="button"
+              onclick="document.querySelector('#offcanvasNavbar2 .btn-close')?.click()" data-bs-toggle="modal"
+              data-bs-target="#signup-modal">
               Sign Up
             </button>
+          </div>
+        </div>
+      </div>
+      <!-- Sign Up Modal -->
+      <div class="modal fade" id="signup-modal" tabindex="-1" aria-labelledby="signup-modal-label" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header text-center">
+              <h2 class="modal-title fs-5 w-100" id="signup-modal-label">Good to see you again! <br>
+                Please Log in!</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-floating mb-2"> <input type="password" class="form-control" id="floatingPassword"
+                    placeholder="Password"> <label for="floatingPassword">Login (min. 6 characters)</label> </div>
+                <div class="form-floating mb-2"> <input type="password" class="form-control" id="floatingPassword"
+                    placeholder="Password"> <label for="floatingPassword">Password (min. 8 characters)</label>
+                </div>
+              </form>
+
+              <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">Log In</button>
+
+              <div class="mt-3">
+                <span>Don't have account yet? <a class="text-decoration-none" href="./registration.html">Register</a>
+                  then!</span>
+              </div>
+
+            </div>
+
+            <div class="modal-footer">
+              <figure class="border-start border-4 ps-3">
+                <p class="fw-bold pb-2">
+                  "Money is not the goal. Money has no value. The value lies in the dreams that money helps
+                  realize."
+                </p>
+                <figcaption class="blockquote-footer">
+                  <cite class="fst-italic">Robert Kiyosaki</cite>, author of <em>Rich Dad Poor Dad</em>
+                </figcaption>
+              </figure>
+            </div>
+
           </div>
         </div>
       </div>
@@ -56,7 +100,7 @@
 
   <!-- Główna treść strony -->
   <article>
-    <h1 class="my-3 fw-normal text-center">Get your Budget on the right track</h1>
+    <h2 class="my-3 fw-normal text-center">Get your Budget on the right track</h2>
 
     <div class="container col-md-6 form-container">
       <!-- Img thanks to https://unsplash.com/photos/group-of-people-running-on-stadium-atSaEOeE8Nk -->
@@ -75,13 +119,13 @@
         <div class="w-100 d-flex">
           <button class="btn btn-success w-50 py-2 me-1" data-bs-toggle="modal" data-bs-target="#registerModal"
             type="button">Register</button>
-          
+
           <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel"
             aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="registerModalLabel">Congratulation!</h1>
+                  <h2 class="modal-title fs-5" id="registerModalLabel">Congratulation!</h2>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -94,16 +138,14 @@
             </div>
           </div>
 
-          <button class="btn btn-danger w-50 py-2 ms-1" 
-          data-bs-toggle="modal" data-bs-target="#cancelModal"
-          type="button">Cancel</button>
+          <button class="btn btn-danger w-50 py-2 ms-1" data-bs-toggle="modal" data-bs-target="#cancelModal"
+            type="button">Cancel</button>
 
-          <div class="modal fade" id="cancelModal" tabindex="-1" aria-labelledby="cancelModalLabel"
-            aria-hidden="true">
+          <div class="modal fade" id="cancelModal" tabindex="-1" aria-labelledby="cancelModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="cancelModalLabel">Wait a minute!</h1>
+                  <h2 class="modal-title fs-5" id="cancelModalLabel">Wait a minute!</h2>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

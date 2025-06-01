@@ -42,13 +42,58 @@
               aria-label="Close"></button>
           </div>
           <div class="offcanvas-body d-flex justify-content-lg-end  flex-column flex-lg-row">
-            <button class="btn btn-outline-success m-1" type="submit" 
-            onclick="window.open('./registration.html', '_parent')">
+            <button class="btn btn-outline-success m-1" type="submit"
+              onclick="window.open('./registration.html', '_parent')">
               Registration
             </button>
-            <button class="btn btn-outline-success m-1" type="submit">
+            <button class="btn btn-outline-success m-1" type="button"
+              onclick="document.querySelector('#offcanvasNavbar2 .btn-close')?.click()" data-bs-toggle="modal"
+              data-bs-target="#signup-modal">
               Sign Up
             </button>
+          </div>
+
+        </div>
+      </div>
+      <!-- Sign Up Modal -->
+      <div class="modal fade" id="signup-modal" tabindex="-1" aria-labelledby="signup-modal-label" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header text-center">
+              <h2 class="modal-title fs-5 w-100" id="signup-modal-label">Good to see you again! <br>
+                Please Log in!</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-floating mb-2"> <input type="password" class="form-control" id="floatingPassword"
+                    placeholder="Password"> <label for="floatingPassword">Login (min. 6 characters)</label> </div>
+                <div class="form-floating mb-2"> <input type="password" class="form-control" id="floatingPassword"
+                    placeholder="Password"> <label for="floatingPassword">Password (min. 8 characters)</label>
+                </div>
+              </form>
+
+              <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">Log In</button>
+
+              <div class="mt-3">
+                <span>Don't have account yet? <a class="text-decoration-none" href="./registration.html">Register</a>
+                  then!</span>
+              </div>
+
+            </div>
+
+            <div class="modal-footer">
+              <figure class="border-start border-4 ps-3">
+                <p class="fw-bold pb-2">
+                  "Money is not the goal. Money has no value. The value lies in the dreams that money helps
+                  realize."
+                </p>
+                <figcaption class="blockquote-footer">
+                  <cite class="fst-italic">Robert Kiyosaki</cite>, author of <em>Rich Dad Poor Dad</em>
+                </figcaption>
+              </figure>
+            </div>
+
           </div>
         </div>
       </div>
@@ -68,7 +113,8 @@
           <div class="my-3 py-3">
             <div class="d-flex justify-content-end">
               <p class="w-75 bg-dark text-white p-3 rounded-5" id="app-description">
-                <span class="fw-bold">Personal Budget @pp</span> is a simple tool that helps you control your expenses, track your income, and plan your savings to better manage your personal finances.
+                <span class="fw-bold">Personal Budget @pp</span> is a simple tool that helps you control your expenses,
+                track your income, and plan your savings to better manage your personal finances.
               </p>
             </div>
 
@@ -82,10 +128,11 @@
                 <div class="d-flex gap-2 w-100 justify-content-between">
                   <div>
                     <h6 class="mb-1">Sign up and Log in!</h6>
-                    <p class="mb-0 opacity-75">Create a free account or log in to existing one to keep your data safely stored.</p>
+                    <p class="mb-0 opacity-75">Create a free account or log in to existing one to keep your data safely
+                      stored.</p>
                   </div>
                 </div>
-              </div> 
+              </div>
               <div class="list-group-item d-flex gap-3 py-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                   class="bi bi-2-circle-fill" viewBox="0 0 16 16">
@@ -95,10 +142,11 @@
                 <div class="d-flex gap-2 w-100 justify-content-between">
                   <div>
                     <h6 class="mb-1">Add income sources and expense categories</h6>
-                    <p class="mb-0 opacity-75">Specify where your money comes from and what you spend it on (e.g. food, bills, transportation).</p>
+                    <p class="mb-0 opacity-75">Specify where your money comes from and what you spend it on (e.g. food,
+                      bills, transportation).</p>
                   </div>
                 </div>
-              </div> 
+              </div>
               <div class="list-group-item d-flex gap-3 py-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                   class="bi bi-3-circle-fill" viewBox="0 0 16 16">
@@ -108,7 +156,8 @@
                 <div class="d-flex gap-2 w-100 justify-content-between">
                   <div>
                     <h6 class="mb-1">Start tracking your finances</h6>
-                    <p class="mb-0 opacity-75">Regularly add new transactions and analyze charts or summaries to see where you can save.</p>
+                    <p class="mb-0 opacity-75">Regularly add new transactions and analyze charts or summaries to see
+                      where you can save.</p>
                   </div>
                 </div>
               </div>
@@ -130,11 +179,13 @@
         <div class="me-lg-3 pt-3 px-3 text-center overflow-hidden">
           <div class="position-relative">
             <img src="./images/apple-macbookpro14-front.png" alt="laptop" class="mb-5 ms-2 img-full-width">
-            <img src="./images/apple-iphone13pro-gold-portrait.png" alt="laptop" class="position-absolute bottom-0 start-0 img-quarter-height">
+            <img src="./images/apple-iphone13pro-gold-portrait.png" alt="laptop"
+              class="position-absolute bottom-0 start-0 img-quarter-height">
           </div>
           <div class="p-3">
             <h2 class="display-5 m-0">Multiplatform friendly</h2>
-            <button type="button" class="btn btn-success m-4 fs-1" onclick="window.open('./registration.html', '_parent')" >Start Today!</button>
+            <button type="button" class="btn btn-success m-4 fs-1"
+              onclick="window.open('./registration.html', '_parent')">Start Today!</button>
           </div>
         </div>
       </section>
