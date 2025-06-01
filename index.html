@@ -42,7 +42,8 @@
               aria-label="Close"></button>
           </div>
           <div class="offcanvas-body d-flex justify-content-lg-end  flex-column flex-lg-row">
-            <button class="btn btn-outline-success m-1" type="submit">
+            <button class="btn btn-outline-success m-1" type="submit" 
+            onclick="window.open('./registration.html', '_parent')">
               Registration
             </button>
             <button class="btn btn-outline-success m-1" type="submit">
@@ -56,13 +57,14 @@
 
   <!-- Główna treść strony -->
   <article>
+    <h2 class="text-center fw-bold text-uppercase mt-2">Take control of your finances!</h2>
     <div class="container d-lg-flex flex-lg-equal align-items-lg-center my-3 ps-3">
       <!-- Lewa sekcja opisowa -->
       <section class="col-lg-6 me-lg-2">
+        <h3 class="display-5 text-bg-dark text-center overflow-hidden rounded-circle" id="slogan">YES! <br> It's
+          simple!
+        </h3>
         <div class="" id="intro-container">
-          <h2 class="display-5 text-bg-dark text-center overflow-hidden rounded-circle" id="slogan">YES! <br> It's
-            simple!
-          </h2>
           <div class="my-3 py-3">
             <div class="d-flex justify-content-end">
               <p class="w-75 bg-dark text-white p-3 rounded-5" id="app-description">
@@ -79,8 +81,8 @@
                 </svg>
                 <div class="d-flex gap-2 w-100 justify-content-between">
                   <div>
-                    <h6 class="mb-1">Sing up and Log in!</h6>
-                    <p class="mb-0 opacity-75">Create a free account or log in to keep your data safely stored.</p>
+                    <h6 class="mb-1">Sign up and Log in!</h6>
+                    <p class="mb-0 opacity-75">Create a free account or log in to existing one to keep your data safely stored.</p>
                   </div>
                 </div>
               </div> 
@@ -127,13 +129,12 @@
       <section class="col-lg-6 ms-lg-2">
         <div class="me-lg-3 pt-3 px-3 text-center overflow-hidden">
           <div class="position-relative">
-            <img src="./images/apple-macbookpro14-front.png" alt="laptop" width="100%" class="mb-5 ms-2">
-            <img src="./images/apple-iphone13pro-gold-portrait.png" alt="laptop" height="200px"
-              class="position-absolute bottom-0 start-0">
+            <img src="./images/apple-macbookpro14-front.png" alt="laptop" class="mb-5 ms-2 img-full-width">
+            <img src="./images/apple-iphone13pro-gold-portrait.png" alt="laptop" class="position-absolute bottom-0 start-0 img-quarter-height">
           </div>
           <div class="p-3">
             <h2 class="display-5 m-0">Multiplatform friendly</h2>
-            <button type="button" class="btn btn-success m-4 fs-1">Start Today!</button>
+            <button type="button" class="btn btn-success m-4 fs-1" onclick="window.open('./registration.html', '_parent')" >Start Today!</button>
           </div>
         </div>
       </section>
@@ -152,12 +153,10 @@
       <p class="text-center text-body-secondary m-0 mt-1">© 2025 Kamil Szamajda</p>
       <ul class="justify-content-center list-unstyled d-flex">
         <li class="ms-3"><a class="text-body-secondary" href="https://github.com/Marionmancer" target="_blank"
-            aria-label="Github"><i class="bi bi-github" width="24" height="24">
-              <use xlink:href="#github"></use>
+            aria-label="Github"><i class="bi bi-github icon-size">
             </i></a></li>
         <li class="ms-3"><a class="text-body-secondary" href="https://github.com/Marionmancer" target="_blank"
-            aria-label="Github"><i class="bi bi-github" width="24" height="24">
-              <use xlink:href="#github"></use>
+            aria-label="Github"><i class="bi bi-github icon-size">
             </i></a></li>
       </ul>
     </footer>

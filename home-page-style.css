@@ -1,6 +1,7 @@
 body {
   background-color:antiquewhite;
   font-family: 'Inter', sans-serif;
+  height: 100%;
 }
 
 h2, h3 {
@@ -47,4 +48,16 @@ h2, h3 {
   justify-content: center;
   margin: 0;
   padding: 0;
+}
+
+.icon-size{
+  font-size: 24px;
+}
+
+.img-full-width{
+  width: 100%;
+}
+
+.img-quarter-height{
+  width: 25%;
 }
