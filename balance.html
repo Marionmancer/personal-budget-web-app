@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Balance</title>
+
+  <!-- Boostrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Mono&family=Inter:wght@400;600&family=Manrope:wght@400;600&family=Playfair+Display:wght@400;600&display=swap"
+    rel="stylesheet" />
+
+  <!-- CSS fonts -->
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large">
+      <div class="container-fluid">
+        <a id="logo-container" href="./index.html">
+          <i id="logo-icon" class="bi bi-coin"></i>
+          <h1>Personal Budget @pp</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
+          aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2"
+          aria-labelledby="offcanvasNavbar2Label">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbar2Label">
+              Menu
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+              aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body d-flex justify-content-lg-end  flex-column flex-lg-row">
+            <button class="btn btn-outline-success m-1" type="submit">
+              <!-- onclick="window.open('./addExpense.html', '_parent')" -->
+              Add Income
+            </button>
+            <button class="btn btn-outline-success m-1" type="submit"
+              onclick="window.open('./addExpense.html', '_parent')">
+              Add Expense
+            </button>
+            <button class="btn btn-outline-success m-1" type="submit"
+              onclick="window.open('./balance.html', '_parent')">
+              Show Balance
+            </button>
+            <button class="btn btn-outline-success m-1" type="submit" onclick="window.open('./index.html', '_parent')">
+              Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Główna treść strony -->
+  <main>
+    <article>
+      <h2 class="my-3 fw-normal text-center p-3 bg-black bg-opacity-10 border border-black border-start-0">
+        <i class="bi bi-journal-text"></i>
+        Balance Summary
+      </h2>
+
+      <div class="container d-lg-flex justify-content-between">
+
+        <section class="incomes-container p-0 me-lg-1 col-12 col-lg-6">
+          <h3 class="text-center p-3 bg-primary bg-opacity-10 border border-primary border-start-0 border-end-0">
+            <i class="bi bi-piggy-bank-fill"></i>
+            Incomes
+          </h3>
+
+          <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item bg-transparent">
+              <h4 class="accordion-header">
+                <button class="accordion-button bg-transparent" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                  aria-controls="panelsStayOpen-collapseOne">
+                  <h4>
+                    <i class="bi bi-tag-fill"></i>
+                    Balance
+                  </h4>
+                </button>
+              </h4>
+              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                <div class="accordion-body p-0">
+
+                  <table class="table table-primary">
+                    <thead>
+                      <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Item</th>
+                        <th scope="col">Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td class="dynamic-text">2024-12-03</td>
+                        <td class="dynamic-text">Sale</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">2 671.33 zł</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td class="dynamic-text">2024-12-18</td>
+                        <td class="dynamic-text">Scholarship</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">3 623.44 zł</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td class="dynamic-text">2025-01-20</td>
+                        <td class="dynamic-text">Investment profit</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">3 459.21 zł</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td class="dynamic-text">2025-01-26</td>
+                        <td class="dynamic-text">Bank interest</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">2 766.68 zł</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                        <td class="dynamic-text">2025-01-27</td>
+                        <td class="dynamic-text">Bank interest</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">4 374.53 zł</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">6</th>
+                        <td class="dynamic-text">2025-01-30</td>
+                        <td class="dynamic-text">Investment profit</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">4 822.91 zł</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item bg-transparent">
+              <h4 class="accordion-header">
+                <button class="accordion-button bg-transparent" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true"
+                  aria-controls="panelsStayOpen-collapseTwo">
+                  <h4>
+                    <i class="bi bi-tags-fill"></i>
+                    Balance by Category
+                  </h4>
+                </button>
+              </h4>
+              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show">
+                <div class="accordion-body p-0">
+
+                  <table class="table table-primary">
+                    <thead>
+                      <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Item</th>
+                        <th scope="col">Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td class="dynamic-text">Sale</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">2 671.33 zł</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td class="dynamic-text">Scholarship</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">3 623.44 zł</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td class="dynamic-text">Investment profit</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">8 282.12 zł</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td class="dynamic-text">Bank interest</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">7 141.21 zł</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <table class="table table-primary">
+              <thead>
+                <th scope="col">
+                  <h5 class="m-0 dynamic-text-big">
+                    <i class="bi bi-journal-plus"></i>
+                    Incomes summary
+                  </h5>
+                </th>
+                <th scope="col" class="monetary-values text-right-allignt dynamic-text-big">21 718.10 zł</th>
+              </thead>
+            </table>
+          </div>
+
+          <section>
+            <div id="piechartIncomes" class="d-flex justify-content-center container"></div>
+          </section>
+
+        </section>
+
+        <section class="expenses-container p-0 ms-lg-1 col-12 col-lg-6">
+
+          <h3 class="text-center p-3 bg-warning bg-opacity-10 border border-warning border-start-0 border-end-0">
+            <i class="bi bi-cash-coin"></i>
+            Expenses
+          </h3>
+
+          <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item bg-transparent">
+              <h4 class="accordion-header">
+                <button class="accordion-button bg-transparent" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true"
+                  aria-controls="panelsStayOpen-collapseThree">
+                  <h4>
+                    <i class="bi bi-tag-fill"></i>
+                    Balance
+                  </h4>
+                </button>
+              </h4>
+              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show">
+                <div class="accordion-body p-0">
+
+                  <table class="table table-warning">
+                    <thead>
+                      <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Item</th>
+                        <th scope="col">Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td class="dynamic-text">2024-12-14</td>
+                        <td class="dynamic-text">Insurance</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">3 417.18 zł</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td class="dynamic-text">2024-12-15</td>
+                        <td class="dynamic-text">Entertainment</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">4 002.44 zł</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td class="dynamic-text">2025-01-20</td>
+                        <td class="dynamic-text">Rent payment</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">1 622.31 zł</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td class="dynamic-text">2025-01-26</td>
+                        <td class="dynamic-text">Phone subscription</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">199.99 zł</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                        <td class="dynamic-text">2025-01-26</td>
+                        <td class="dynamic-text">Phone subscription</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">99.99 zł</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">6</th>
+                        <td class="dynamic-text">2024-12-15</td>
+                        <td class="dynamic-text">Entertainment</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">735.50 zł</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item bg-transparent">
+              <h4 class="accordion-header">
+                <button class="accordion-button bg-transparent" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true"
+                  aria-controls="panelsStayOpen-collapseFour">
+                  <h4>
+                    <i class="bi bi-tags-fill"></i>
+                    Balance by Category
+                  </h4>
+                </button>
+              </h4>
+              <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse show">
+                <div class="accordion-body p-0">
+
+                  <table class="table table-warning">
+                    <thead>
+                      <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Item</th>
+                        <th scope="col">Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td class="dynamic-text">Insurance</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">3 417.18 zł</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td class="dynamic-text">Entertainment</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">4 737.94 zł</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td class="dynamic-text">Rent payment</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">1 622.31 zł</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td class="dynamic-text">Phone subscription</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">299.98 zł</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <table class="table table-warning">
+            <thead>
+              <th scope="col">
+                <h5 class="m-0 dynamic-text-big">
+                  <i class="bi bi-journal-minus"></i>
+                  Expenses summary
+                </h5>
+              </th>
+              <th scope="col" class="monetary-values text-right-allignt dynamic-text-big">10 077.41 zł</th>
+            </thead>
+          </table>
+
+          <section>
+            <div id="piechartExpenses" class="d-flex justify-content-center container"></div>
+          </section>
+
+        </section>
+
+      </div>
+
+      <section id="summary-container" class="container col-12 col-lg-6">
+        <h4 class="p-3 bg-success bg-opacity-10 border border-success border-start-0 border-end-0">
+          <table class="table table-borderless table-transparent mb-0">
+            <thead>
+              <th scope="col" class="col-6 dynamic-text-big ">
+                <i class="bi bi-clipboard2-pulse-fill"></i>
+                Total balance
+              </th>
+              <th scope="col" class="col-6 monetary-values text-right-allignt dynamic-text-big">11 640.69 zł</th>
+            </thead>
+          </table>
+        </h4>
+      </section>
+
+    </article>
+
+  </main>
+
+  <section>
+    <div class="container mt-5">
+      <figure class="text-center quote-allignment" id="quote-allignment">
+        <p class="fw-bold">
+          "Poverty is no disgrace to those who acknowledge it, but it is a disgrace not to strive to overcome it."
+        </p>
+        <figcaption class="blockquote-footer">
+          <cite class="fst-italic">Pericles</cite>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <div class="container">
+    <footer class="pt-3 mt-4">
+      <ul class="nav justify-content-center border-top">
+        <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-body-secondary">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Projects</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About Me</a></li>
+      </ul>
+      <p class="text-center text-body-secondary m-0 mt-1">© 2025 Kamil Szamajda</p>
+      <ul class="justify-content-center list-unstyled d-flex">
+        <li class="ms-3"><a class="text-body-secondary" href="https://github.com/Marionmancer" target="_blank"
+            aria-label="Github"><i class="bi bi-github icon-size">
+            </i></a></li>
+        <li class="ms-3"><a class="text-body-secondary" href="https://github.com/Marionmancer" target="_blank"
+            aria-label="Github"><i class="bi bi-github icon-size">
+            </i></a></li>
+      </ul>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var dataIncomes = google.visualization.arrayToDataTable([
+        ['Item', 'Amount'],
+        ['Sale', 2671.33],
+        ['Scholarship', 3623.44],
+        ['Investment profit', 8282.12],
+        ['Bank interest', 7141.21],
+      ]);
+
+      var dataExpenses = google.visualization.arrayToDataTable([
+        ['Item', 'Amount'],
+        ['Insurance', 3417.18],
+        ['Entertainment', 4737.94],
+        ['Rent payment', 1622.31],
+        ['Phone subscription', 299.98],
+      ]);
+
+      var options = {
+        height: 300,
+        backgroundColor: 'transparent',
+        chartArea: {
+          height: '60%',
+          width: '100%'
+        },
+        is3D: true,
+        legend:{
+          position: 'labeled',
+          maxLines: 3
+        },
+        pieSliceTextStyle: {
+          fontSize: 14
+        }
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechartIncomes'));
+      chart.draw(dataIncomes, options);
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechartExpenses'));
+      chart.draw(dataExpenses, options);
+    }
+
+    window.addEventListener('resize', function () {
+      drawChart();
+    });
+
+  </script>
+
+</body>
+
+</html>
