@@ -42,3 +42,40 @@ h2, h3 {
 .quote-justify-allignment{
   text-align: justify;
 }
+
+.text-right-allignt{
+  text-align: right;
+}
+
+.monetary-values{
+  font-family: 'Fira Mono', monospace;
+}
+
+.bg-transparent{
+  background-color: transparent;
+  border: none;
+}
+
+.table-transparent,
+.table-transparent th,
+.table-transparent td {
+  background-color: transparent;
+}
+
+
+@media (max-width: 540px) {
+  .dynamic-text {
+    font-size: clamp(0.75rem, 2.5vw, 1.5rem);;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .dynamic-text-big {
+    font-size: clamp(0.875rem, 4vw, 2rem);;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
