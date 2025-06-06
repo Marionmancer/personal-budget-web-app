@@ -114,10 +114,8 @@
             </div>
             <div class="modal-body">
               <form>
-                <div class="form-floating mb-2"> <input type="date" class="form-control" id="startDate"
-                    placeholder="Login"> <label for="startDate">Start Date</label> </div>
-                <div class="form-floating mb-2"> <input type="date" class="form-control" id="endDate"
-                    placeholder="Password"> <label for="endDate">End Date</label>
+                <div class="form-floating mb-2"> <input type="date" class="form-control" id="startDate"> <label for="startDate">Start Date</label> </div>
+                <div class="form-floating mb-2"> <input type="date" class="form-control" id="endDate"> <label for="endDate">End Date</label>
                 </div>
               </form>
 
@@ -130,8 +128,6 @@
 
     </header>
 
-    <article>
-
       <div class="container d-lg-flex justify-content-between">
         <section class="incomes-container p-0 me-lg-1 col-12 col-lg-6">
           <h3 class="text-center p-3 bg-primary bg-opacity-10 border border-primary border-start-0 border-end-0">
@@ -139,16 +135,14 @@
             Incomes
           </h3>
 
-          <div class="accordion" id="accordionPanelsStayOpenExample">
+          <div class="accordion" id="accordionPanelStayOpenIncomes">
             <div class="accordion-item bg-transparent">
               <h4 class="accordion-header">
-                <button class="accordion-button bg-transparent" type="button" data-bs-toggle="collapse"
+                <button class="accordion-button bg-transparent fs-4" type="button" data-bs-toggle="collapse"
                   data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
                   aria-controls="panelsStayOpen-collapseOne">
-                  <h4>
                     <i class="bi bi-tag-fill"></i>
-                    Balance
-                  </h4>
+                    <span class="ps-2">Balance</span>
                 </button>
               </h4>
               <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
@@ -218,13 +212,11 @@
             </div>
             <div class="accordion-item bg-transparent">
               <h4 class="accordion-header">
-                <button class="accordion-button bg-transparent" type="button" data-bs-toggle="collapse"
+                <button class="accordion-button bg-transparent fs-4" type="button" data-bs-toggle="collapse"
                   data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true"
                   aria-controls="panelsStayOpen-collapseTwo">
-                  <h4>
                     <i class="bi bi-tags-fill"></i>
-                    Balance by Category
-                  </h4>
+                    <span class="ps-2">Balance by Category</span>
                 </button>
               </h4>
               <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show">
@@ -276,20 +268,26 @@
           <div>
             <table class="table table-primary">
               <thead>
-                <th scope="col">
-                  <h5 class="m-0 dynamic-text-big">
-                    <i class="bi bi-journal-plus"></i>
-                    Incomes summary
-                  </h5>
-                </th>
-                <th scope="col" class="monetary-values text-right-allignt dynamic-text-big">
-                  21 718.10 zł
-                </th>
+                <tr>
+                  <th scope="col">
+                    <p class="m-0 dynamic-text-big fs-5">
+                      <i class="bi bi-journal-plus"></i>
+                      Incomes summary
+                    </p>
+                  </th>
+                  <th scope="col" class="monetary-values text-right-allignt dynamic-text-big">
+                    21 718.10 zł
+                  </th>
+                </tr>
               </thead>
             </table>
           </div>
+          
+          <section>
+            <h4 class="text-center">Incomes ratio</h4>
+            <div id="piechartIncomes" class="d-flex justify-content-center container"></div>
+          </section>
 
-          <div id="piechartIncomes" class="d-flex justify-content-center container"></div>
         </section>
 
         <section class="expenses-container p-0 ms-lg-1 col-12 col-lg-6">
@@ -298,16 +296,14 @@
             Expenses
           </h3>
 
-          <div class="accordion" id="accordionPanelsStayOpenExample">
+          <div class="accordion" id="accordionPanelStayOpenExpenses">
             <div class="accordion-item bg-transparent">
               <h4 class="accordion-header">
-                <button class="accordion-button bg-transparent" type="button" data-bs-toggle="collapse"
+                <button class="accordion-button bg-transparent fs-4" type="button" data-bs-toggle="collapse"
                   data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true"
                   aria-controls="panelsStayOpen-collapseThree">
-                  <h4>
                     <i class="bi bi-tag-fill"></i>
-                    Balance
-                  </h4>
+                    <span class="ps-2">Balance</span>
                 </button>
               </h4>
               <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show">
@@ -377,13 +373,11 @@
             </div>
             <div class="accordion-item bg-transparent">
               <h4 class="accordion-header">
-                <button class="accordion-button bg-transparent" type="button" data-bs-toggle="collapse"
+                <button class="accordion-button bg-transparent fs-4" type="button" data-bs-toggle="collapse"
                   data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true"
                   aria-controls="panelsStayOpen-collapseFour">
-                  <h4>
                     <i class="bi bi-tags-fill"></i>
-                    Balance by Category
-                  </h4>
+                    <span class="ps-2">Balance by Category</span>
                 </button>
               </h4>
               <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse show">
@@ -434,44 +428,50 @@
 
           <table class="table table-warning">
             <thead>
-              <th scope="col">
-                <h5 class="m-0 dynamic-text-big">
-                  <i class="bi bi-journal-minus"></i>
-                  Expenses summary
-                </h5>
-              </th>
-              <th scope="col" class="monetary-values text-right-allignt dynamic-text-big">
-                10 077.41 zł
-              </th>
+              <tr>
+                <th scope="col">
+                  <p class="m-0 dynamic-text-big fs-5">
+                    <i class="bi bi-journal-minus"></i>
+                    Expenses summary
+                  </p>
+                </th>
+                <th scope="col" class="monetary-values text-right-allignt dynamic-text-big">
+                  10 077.41 zł
+                </th>
+              </tr>
             </thead>
           </table>
 
           <section>
+            <h4 class="text-center">Expenses ratio</h4>
             <div id="piechartExpenses" class="d-flex justify-content-center container"></div>
           </section>
         </section>
       </div>
 
       <section id="summary-container" class="container col-12 col-lg-6">
-        <h4 class="p-3 bg-success bg-opacity-10 border border-success border-start-0 border-end-0">
-          <table class="table table-borderless table-transparent mb-0">
+        <h3 class="text-center fw-bold text-uppercase">Summary</h3>
+        <div class="p-3 bg-success bg-opacity-10 border border-success border-start-0 border-end-0">
+          <table class="table table-borderless table-transparent mb-0 fs-4">
             <thead>
-              <th scope="col" class="col-6 dynamic-text-big">
-                <i class="bi bi-clipboard2-pulse-fill"></i>
-                Total balance
-              </th>
-              <th scope="col" class="col-6 monetary-values text-right-allignt dynamic-text-big">
-                11 640.69 zł
-              </th>
+              <tr>
+                <th scope="col" class="col-6 dynamic-text-big">
+                  <i class="bi bi-clipboard2-pulse-fill"></i>
+                  Total balance
+                </th>
+                <th scope="col" class="col-6 monetary-values text-right-allignt dynamic-text-big">
+                  11 640.69 zł
+                </th>
+              </tr>
             </thead>
           </table>
-        </h4>
+        </div>
       </section>
-    </article>
   </main>
 
   <section>
     <div class="container mt-5">
+      <h5 class="text-center">Think about it...</h5>
       <figure class="text-center quote-allignment" id="quote-allignment">
         <p class="fw-bold">
           "Poverty is no disgrace to those who acknowledge it, but it is a
@@ -518,9 +518,9 @@
     integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
     crossorigin="anonymous"></script>
 
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
 
-  <script type="text/javascript">
+  <script>
     google.charts.load("current", { packages: ["corechart"] });
     google.charts.setOnLoadCallback(drawChart);
 
