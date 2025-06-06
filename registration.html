@@ -23,7 +23,7 @@
 <body>
   <header>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large">
       <div class="container-fluid">
         <a id="logo-container" href="./index.html">
           <i id="logo-icon" class="bi bi-coin"></i>
@@ -44,59 +44,72 @@
           </div>
           <div class="offcanvas-body d-flex justify-content-lg-end  flex-column flex-lg-row">
             <button class="btn btn-outline-success m-1" type="submit" onclick="window.open('./index.html', '_parent')">
+              <i class="bi bi-house"></i>
               Home
             </button>
             <button class="btn btn-outline-success m-1" type="button"
               onclick="document.querySelector('#offcanvasNavbar2 .btn-close')?.click()" data-bs-toggle="modal"
               data-bs-target="#signup-modal">
+              <i class="bi bi-box-arrow-in-right"></i>
               Sign Up
             </button>
           </div>
         </div>
       </div>
-      <!-- Sign Up Modal -->
-      <div class="modal fade" id="signup-modal" tabindex="-1" aria-labelledby="signup-modal-label" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header text-center">
-              <h2 class="modal-title fs-5 w-100" id="signup-modal-label">Good to see you again! <br>
-                Please Log in!</h2>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="form-floating mb-2"> <input type="login" class="form-control" id="floatingLogin"
-                    placeholder="Login"> <label for="floatingLogin">Login (min. 6 characters)</label> </div>
-                <div class="form-floating mb-2"> <input type="password" class="form-control" id="floatingPassword"
-                    placeholder="Password"> <label for="floatingPassword">Password (min. 8 characters)</label>
+    </nav>
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signup-modal" tabindex="-1" aria-labelledby="signup-modal-label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h2 class="modal-title fs-5 w-100" id="signup-modal-label">Good to see you again! <br>
+              Please Log in!</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="input-group flex-nowrap mb-2">
+                <i class="bi bi-person-fill-lock input-group-text icon-size"></i>
+                <div class="form-floating"> <input type="string" class="form-control" id="userLogin"
+                    placeholder="Login">
+                  <label for="userLogin">Login (min. 6 characters)</label>
                 </div>
-              </form>
-
-              <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">Log In</button>
-
-              <div class="mt-3">
-                <span>Don't have account yet? <a class="text-decoration-none" href="./registration.html">Register</a>
-                  then!</span>
               </div>
 
-            </div>
+              <div class="input-group flex-nowrap mb-2">
+                <i class="bi bi-key-fill input-group-text icon-size"></i>
+                <div class="form-floating"> <input type="string" class="form-control" id="userPassword"
+                    placeholder="Password">
+                  <label for="userPassword">Password (min. 8 characters)</label>
+                </div>
+              </div>
+            </form>
 
-            <div class="modal-footer">
-              <figure class="border-start border-4 ps-3">
-                <p class="fw-bold pb-2">
-                  "Money is not the goal. Money has no value. The value lies in the dreams that money helps
-                  realize."
-                </p>
-                <figcaption class="blockquote-footer">
-                  <cite class="fst-italic">Robert Kiyosaki</cite>, author of <em>Rich Dad Poor Dad</em>
-                </figcaption>
-              </figure>
+            <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal"
+              onclick="window.open('./balance.html', '_parent')">Log In</button>
+
+            <div class="mt-3">
+              <span>Don't have account yet? <a class="text-decoration-none" href="./registration.html">Register</a>
+                then!</span>
             </div>
 
           </div>
+
+          <div class="modal-footer">
+            <figure class="border-start border-4 ps-3">
+              <p class="fw-bold pb-2">
+                "Money is not the goal. Money has no value. The value lies in the dreams that money helps
+                realize."
+              </p>
+              <figcaption class="blockquote-footer">
+                <cite class="fst-italic">Robert Kiyosaki</cite>, author of <em>Rich Dad Poor Dad</em>
+              </figcaption>
+            </figure>
+          </div>
+
         </div>
       </div>
-    </nav>
+    </div>
   </header>
 
   <!-- Główna treść strony -->
@@ -109,14 +122,36 @@
         class="w-100 mb-3 rounded-2">
 
       <form>
-        <div class="form-floating mb-2"> <input type="login" class="form-control" id="floatingLogin"
-            placeholder="Login"> <label for="floatingLogin">Login (min. 6 characters)</label> </div>
-        <div class="form-floating mb-2"> <input type="password" class="form-control" id="floatingPassword"
-            placeholder="Password"> <label for="floatingPassword">Password (min. 8 characters)</label> </div>
-        <div class="form-floating mb-2"> <input type="userName" class="form-control" id="floatingUserName"
-            placeholder="UserName"> <label for="floatingUserName">User Name</label> </div>
-        <div class="form-floating mb-2"> <input type="userSurname" class="form-control" id="floatingUserSurname"
-            placeholder="UserSurname"> <label for="floatingUserSurname">User Surname</label> </div>
+        <div class="input-group flex-nowrap mb-2">
+          <i class="bi bi-person-fill-lock input-group-text icon-size"></i>
+          <div class="form-floating"> <input type="string" class="form-control" id="userLogin" placeholder="Login">
+            <label for="userLogin">Login (min. 6 characters)</label>
+          </div>
+        </div>
+
+        <div class="input-group flex-nowrap mb-2">
+          <i class="bi bi-key-fill input-group-text icon-size"></i>
+          <div class="form-floating"> <input type="string" class="form-control" id="userPassword"
+              placeholder="Password">
+            <label for="userPassword">Password (min. 8 characters)</label>
+          </div>
+        </div>
+
+        <div class="input-group flex-nowrap mb-2">
+          <i class="bi bi-person-vcard input-group-text icon-size"></i>
+          <div class="form-floating"> <input type="string" class="form-control" id="userName" placeholder="UserName">
+            <label for="userName">User Name</label>
+          </div>
+        </div>
+
+        <div class="input-group flex-nowrap mb-2">
+          <i class="bi bi-person-vcard input-group-text icon-size"></i>
+          <div class="form-floating"> <input type="string" class="form-control" id="userSurname"
+              placeholder="UserSurname">
+            <label for="userSurname">User Surname</label>
+          </div>
+        </div>
+
         <div class="w-100 d-flex">
           <button class="btn btn-success w-50 py-2 me-1" data-bs-toggle="modal" data-bs-target="#registerModal"
             type="button">Register</button>
@@ -133,9 +168,9 @@
                   Your account has been successfully created!
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
-                  <button type="button" class="btn btn-secondary"
-                    onclick="window.open('./addExpense.html', '_parent')">Start Using</button>
+                  <button type="button" class="btn btn-primary"
+                    onclick="window.open('./addExpense.html', '_parent')">Add your first record!</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
                 </div>
               </div>
             </div>
