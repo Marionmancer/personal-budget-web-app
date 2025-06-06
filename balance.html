@@ -36,13 +36,11 @@
         <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2"
           aria-labelledby="offcanvasNavbar2Label">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbar2Label">
-              Menu
-            </h5>
+            <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Menu</h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
               aria-label="Close"></button>
           </div>
-          <div class="offcanvas-body d-flex justify-content-lg-end  flex-column flex-lg-row">
+          <div class="offcanvas-body d-flex justify-content-lg-end flex-column flex-lg-row">
             <button class="btn btn-outline-success m-1" type="submit">
               <!-- onclick="window.open('./addExpense.html', '_parent')" -->
               Add Income
@@ -66,14 +64,71 @@
 
   <!-- Główna treść strony -->
   <main>
+    <header>
+      <div class="my-3 fw-normal text-center p-3 bg-black bg-opacity-10 border border-black border-start-0">
+        <h2>
+          <i class="bi bi-journal-text"></i>
+          Balance Summary
+        </h2>
+
+        <p class="dynamic-text m-0">
+          from <span id="start-date" class="fw-bold">2025-05-01</span>
+          to <span id="end-date" class="fw-bold">2025-05-31</span>
+        </p>
+
+        <div class="btn-group">
+          <button class="btn btn-outline-secondary btn-sm text-black mt-3" type="button">
+            Dates setting
+          </button>
+          <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split text-black mt-3"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Current Month</a></li>
+            <li><a class="dropdown-item" href="#">Previous Month</a></li>
+            <li><a class="dropdown-item" href="#">Current Year</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><button class="dropdown-item" type="button"
+              onclick="document.querySelector('#offcanvasNavbar2 .btn-close')?.click()" data-bs-toggle="modal"
+              data-bs-target="#dates-set-modal">
+              Custom dates
+            </button></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Dates Modal -->
+      <div class="modal fade" id="dates-set-modal" tabindex="-1" aria-labelledby="dates-set-modal-label" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header text-center">
+              <h2 class="modal-title fs-5 w-100" id="dates-set-modal-label">Please choose date range</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-floating mb-2"> <input type="date" class="form-control" id="startDate"
+                    placeholder="Login"> <label for="startDate">Start Date</label> </div>
+                <div class="form-floating mb-2"> <input type="date" class="form-control" id="endDate"
+                    placeholder="Password"> <label for="endDate">End Date</label>
+                </div>
+              </form>
+
+              <button type="button" class="btn btn-success w-100" data-bs-dismiss="modal">Confirm</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </header>
+
     <article>
-      <h2 class="my-3 fw-normal text-center p-3 bg-black bg-opacity-10 border border-black border-start-0">
-        <i class="bi bi-journal-text"></i>
-        Balance Summary
-      </h2>
 
       <div class="container d-lg-flex justify-content-between">
-
         <section class="incomes-container p-0 me-lg-1 col-12 col-lg-6">
           <h3 class="text-center p-3 bg-primary bg-opacity-10 border border-primary border-start-0 border-end-0">
             <i class="bi bi-piggy-bank-fill"></i>
@@ -94,7 +149,6 @@
               </h4>
               <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
                 <div class="accordion-body p-0">
-
                   <table class="table table-primary">
                     <thead>
                       <tr>
@@ -109,41 +163,52 @@
                         <th scope="row">1</th>
                         <td class="dynamic-text">2024-12-03</td>
                         <td class="dynamic-text">Sale</td>
-                        <td class="monetary-values text-right-allignt dynamic-text">2 671.33 zł</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">
+                          2 671.33 zł
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">2</th>
                         <td class="dynamic-text">2024-12-18</td>
                         <td class="dynamic-text">Scholarship</td>
-                        <td class="monetary-values text-right-allignt dynamic-text">3 623.44 zł</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">
+                          3 623.44 zł
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">3</th>
                         <td class="dynamic-text">2025-01-20</td>
                         <td class="dynamic-text">Investment profit</td>
-                        <td class="monetary-values text-right-allignt dynamic-text">3 459.21 zł</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">
+                          3 459.21 zł
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">4</th>
                         <td class="dynamic-text">2025-01-26</td>
                         <td class="dynamic-text">Bank interest</td>
-                        <td class="monetary-values text-right-allignt dynamic-text">2 766.68 zł</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">
+                          2 766.68 zł
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">5</th>
                         <td class="dynamic-text">2025-01-27</td>
                         <td class="dynamic-text">Bank interest</td>
-                        <td class="monetary-values text-right-allignt dynamic-text">4 374.53 zł</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">
+                          4 374.53 zł
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">6</th>
                         <td class="dynamic-text">2025-01-30</td>
                         <td class="dynamic-text">Investment profit</td>
-                        <td class="monetary-values text-right-allignt dynamic-text">4 822.91 zł</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">
+                          4 822.91 zł
+                        </td>
                       </tr>
                     </tbody>
                   </table>
-
                 </div>
               </div>
             </div>
@@ -160,7 +225,6 @@
               </h4>
               <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show">
                 <div class="accordion-body p-0">
-
                   <table class="table table-primary">
                     <thead>
                       <tr>
@@ -173,27 +237,33 @@
                       <tr>
                         <th scope="row">1</th>
                         <td class="dynamic-text">Sale</td>
-                        <td class="monetary-values text-right-allignt dynamic-text">2 671.33 zł</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">
+                          2 671.33 zł
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">2</th>
                         <td class="dynamic-text">Scholarship</td>
-                        <td class="monetary-values text-right-allignt dynamic-text">3 623.44 zł</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">
+                          3 623.44 zł
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">3</th>
                         <td class="dynamic-text">Investment profit</td>
-                        <td class="monetary-values text-right-allignt dynamic-text">8 282.12 zł</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">
+                          8 282.12 zł
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">4</th>
                         <td class="dynamic-text">Bank interest</td>
-                        <td class="monetary-values text-right-allignt dynamic-text">7 141.21 zł</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">
+                          7 141.21 zł
+                        </td>
                       </tr>
                     </tbody>
                   </table>
-
-
                 </div>
               </div>
             </div>
@@ -208,19 +278,17 @@
                     Incomes summary
                   </h5>
                 </th>
-                <th scope="col" class="monetary-values text-right-allignt dynamic-text-big">21 718.10 zł</th>
+                <th scope="col" class="monetary-values text-right-allignt dynamic-text-big">
+                  21 718.10 zł
+                </th>
               </thead>
             </table>
           </div>
 
-          <section>
-            <div id="piechartIncomes" class="d-flex justify-content-center container"></div>
-          </section>
-
+          <div id="piechartIncomes" class="d-flex justify-content-center container"></div>
         </section>
 
         <section class="expenses-container p-0 ms-lg-1 col-12 col-lg-6">
-
           <h3 class="text-center p-3 bg-warning bg-opacity-10 border border-warning border-start-0 border-end-0">
             <i class="bi bi-cash-coin"></i>
             Expenses
@@ -240,7 +308,6 @@
               </h4>
               <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show">
                 <div class="accordion-body p-0">
-
                   <table class="table table-warning">
                     <thead>
                       <tr>
@@ -255,41 +322,52 @@
                         <th scope="row">1</th>
                         <td class="dynamic-text">2024-12-14</td>
                         <td class="dynamic-text">Insurance</td>
-                        <td class="monetary-values text-right-allignt dynamic-text">3 417.18 zł</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">
+                          3 417.18 zł
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">2</th>
                         <td class="dynamic-text">2024-12-15</td>
                         <td class="dynamic-text">Entertainment</td>
-                        <td class="monetary-values text-right-allignt dynamic-text">4 002.44 zł</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">
+                          4 002.44 zł
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">3</th>
                         <td class="dynamic-text">2025-01-20</td>
                         <td class="dynamic-text">Rent payment</td>
-                        <td class="monetary-values text-right-allignt dynamic-text">1 622.31 zł</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">
+                          1 622.31 zł
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">4</th>
                         <td class="dynamic-text">2025-01-26</td>
                         <td class="dynamic-text">Phone subscription</td>
-                        <td class="monetary-values text-right-allignt dynamic-text">199.99 zł</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">
+                          199.99 zł
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">5</th>
                         <td class="dynamic-text">2025-01-26</td>
                         <td class="dynamic-text">Phone subscription</td>
-                        <td class="monetary-values text-right-allignt dynamic-text">99.99 zł</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">
+                          99.99 zł
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">6</th>
                         <td class="dynamic-text">2024-12-15</td>
                         <td class="dynamic-text">Entertainment</td>
-                        <td class="monetary-values text-right-allignt dynamic-text">735.50 zł</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">
+                          735.50 zł
+                        </td>
                       </tr>
                     </tbody>
                   </table>
-
                 </div>
               </div>
             </div>
@@ -306,7 +384,6 @@
               </h4>
               <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse show">
                 <div class="accordion-body p-0">
-
                   <table class="table table-warning">
                     <thead>
                       <tr>
@@ -319,27 +396,33 @@
                       <tr>
                         <th scope="row">1</th>
                         <td class="dynamic-text">Insurance</td>
-                        <td class="monetary-values text-right-allignt dynamic-text">3 417.18 zł</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">
+                          3 417.18 zł
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">2</th>
                         <td class="dynamic-text">Entertainment</td>
-                        <td class="monetary-values text-right-allignt dynamic-text">4 737.94 zł</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">
+                          4 737.94 zł
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">3</th>
                         <td class="dynamic-text">Rent payment</td>
-                        <td class="monetary-values text-right-allignt dynamic-text">1 622.31 zł</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">
+                          1 622.31 zł
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">4</th>
                         <td class="dynamic-text">Phone subscription</td>
-                        <td class="monetary-values text-right-allignt dynamic-text">299.98 zł</td>
+                        <td class="monetary-values text-right-allignt dynamic-text">
+                          299.98 zł
+                        </td>
                       </tr>
                     </tbody>
                   </table>
-
-
                 </div>
               </div>
             </div>
@@ -353,41 +436,42 @@
                   Expenses summary
                 </h5>
               </th>
-              <th scope="col" class="monetary-values text-right-allignt dynamic-text-big">10 077.41 zł</th>
+              <th scope="col" class="monetary-values text-right-allignt dynamic-text-big">
+                10 077.41 zł
+              </th>
             </thead>
           </table>
 
           <section>
             <div id="piechartExpenses" class="d-flex justify-content-center container"></div>
           </section>
-
         </section>
-
       </div>
 
       <section id="summary-container" class="container col-12 col-lg-6">
         <h4 class="p-3 bg-success bg-opacity-10 border border-success border-start-0 border-end-0">
           <table class="table table-borderless table-transparent mb-0">
             <thead>
-              <th scope="col" class="col-6 dynamic-text-big ">
+              <th scope="col" class="col-6 dynamic-text-big">
                 <i class="bi bi-clipboard2-pulse-fill"></i>
                 Total balance
               </th>
-              <th scope="col" class="col-6 monetary-values text-right-allignt dynamic-text-big">11 640.69 zł</th>
+              <th scope="col" class="col-6 monetary-values text-right-allignt dynamic-text-big">
+                11 640.69 zł
+              </th>
             </thead>
           </table>
         </h4>
       </section>
-
     </article>
-
   </main>
 
   <section>
     <div class="container mt-5">
       <figure class="text-center quote-allignment" id="quote-allignment">
         <p class="fw-bold">
-          "Poverty is no disgrace to those who acknowledge it, but it is a disgrace not to strive to overcome it."
+          "Poverty is no disgrace to those who acknowledge it, but it is a
+          disgrace not to strive to overcome it."
         </p>
         <figcaption class="blockquote-footer">
           <cite class="fst-italic">Pericles</cite>
@@ -400,18 +484,28 @@
   <div class="container">
     <footer class="pt-3 mt-4">
       <ul class="nav justify-content-center border-top">
-        <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-body-secondary">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Projects</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About Me</a></li>
+        <li class="nav-item">
+          <a href="./index.html" class="nav-link px-2 text-body-secondary">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link px-2 text-body-secondary">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link px-2 text-body-secondary">About Me</a>
+        </li>
       </ul>
-      <p class="text-center text-body-secondary m-0 mt-1">© 2025 Kamil Szamajda</p>
+      <p class="text-center text-body-secondary m-0 mt-1">
+        © 2025 Kamil Szamajda
+      </p>
       <ul class="justify-content-center list-unstyled d-flex">
-        <li class="ms-3"><a class="text-body-secondary" href="https://github.com/Marionmancer" target="_blank"
-            aria-label="Github"><i class="bi bi-github icon-size">
-            </i></a></li>
-        <li class="ms-3"><a class="text-body-secondary" href="https://github.com/Marionmancer" target="_blank"
-            aria-label="Github"><i class="bi bi-github icon-size">
-            </i></a></li>
+        <li class="ms-3">
+          <a class="text-body-secondary" href="https://github.com/Marionmancer" target="_blank" aria-label="Github"><i
+              class="bi bi-github icon-size"> </i></a>
+        </li>
+        <li class="ms-3">
+          <a class="text-body-secondary" href="https://github.com/Marionmancer" target="_blank" aria-label="Github"><i
+              class="bi bi-github icon-size"> </i></a>
+        </li>
       </ul>
     </footer>
   </div>
@@ -423,56 +517,58 @@
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
   <script type="text/javascript">
-    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.load("current", { packages: ["corechart"] });
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
       var dataIncomes = google.visualization.arrayToDataTable([
-        ['Item', 'Amount'],
-        ['Sale', 2671.33],
-        ['Scholarship', 3623.44],
-        ['Investment profit', 8282.12],
-        ['Bank interest', 7141.21],
+        ["Item", "Amount"],
+        ["Sale", 2671.33],
+        ["Scholarship", 3623.44],
+        ["Investment profit", 8282.12],
+        ["Bank interest", 7141.21],
       ]);
 
       var dataExpenses = google.visualization.arrayToDataTable([
-        ['Item', 'Amount'],
-        ['Insurance', 3417.18],
-        ['Entertainment', 4737.94],
-        ['Rent payment', 1622.31],
-        ['Phone subscription', 299.98],
+        ["Item", "Amount"],
+        ["Insurance", 3417.18],
+        ["Entertainment", 4737.94],
+        ["Rent payment", 1622.31],
+        ["Phone subscription", 299.98],
       ]);
 
       var options = {
         height: 300,
-        backgroundColor: 'transparent',
+        backgroundColor: "transparent",
         chartArea: {
-          height: '60%',
-          width: '100%'
+          height: "60%",
+          width: "100%",
         },
         is3D: true,
-        legend:{
-          position: 'labeled',
-          maxLines: 3
+        legend: {
+          position: "labeled",
+          maxLines: 3,
         },
         pieSliceTextStyle: {
-          fontSize: 14
-        }
+          fontSize: 14,
+        },
       };
 
-      var chart = new google.visualization.PieChart(document.getElementById('piechartIncomes'));
+      var chart = new google.visualization.PieChart(
+        document.getElementById("piechartIncomes")
+      );
       chart.draw(dataIncomes, options);
 
-      var chart = new google.visualization.PieChart(document.getElementById('piechartExpenses'));
+      var chart = new google.visualization.PieChart(
+        document.getElementById("piechartExpenses")
+      );
       chart.draw(dataExpenses, options);
     }
 
-    window.addEventListener('resize', function () {
+    window.addEventListener("resize", function () {
       drawChart();
     });
-
   </script>
-
 </body>
 
 </html>
