@@ -44,11 +44,13 @@
           </div>
           <div class="offcanvas-body d-flex justify-content-lg-end  flex-column flex-lg-row">
             <button class="btn btn-outline-success m-1" type="submit" onclick="window.open('./index.html', '_parent')">
+              <i class="bi bi-house"></i>
               Home
             </button>
             <button class="btn btn-outline-success m-1" type="button"
               onclick="document.querySelector('#offcanvasNavbar2 .btn-close')?.click()" data-bs-toggle="modal"
               data-bs-target="#signup-modal">
+              <i class="bi bi-box-arrow-in-right"></i>
               Sign Up
             </button>
           </div>
@@ -66,14 +68,25 @@
           </div>
           <div class="modal-body">
             <form>
-              <div class="form-floating mb-2"> <input type="login" class="form-control" id="floatingLogin"
-                  placeholder="Login"> <label for="floatingLogin">Login (min. 6 characters)</label> </div>
-              <div class="form-floating mb-2"> <input type="password" class="form-control" id="floatingPassword"
-                  placeholder="Password"> <label for="floatingPassword">Password (min. 8 characters)</label>
+              <div class="input-group flex-nowrap mb-2">
+                <i class="bi bi-person-fill-lock input-group-text icon-size"></i>
+                <div class="form-floating"> <input type="string" class="form-control" id="userLogin"
+                    placeholder="Login">
+                  <label for="userLogin">Login (min. 6 characters)</label>
+                </div>
+              </div>
+
+              <div class="input-group flex-nowrap mb-2">
+                <i class="bi bi-key-fill input-group-text icon-size"></i>
+                <div class="form-floating"> <input type="string" class="form-control" id="userPassword"
+                    placeholder="Password">
+                  <label for="userPassword">Password (min. 8 characters)</label>
+                </div>
               </div>
             </form>
 
-            <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal" onclick="window.open('./balance.html', '_parent')">Log In</button>
+            <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal"
+              onclick="window.open('./balance.html', '_parent')">Log In</button>
 
             <div class="mt-3">
               <span>Don't have account yet? <a class="text-decoration-none" href="./registration.html">Register</a>
@@ -109,14 +122,36 @@
         class="w-100 mb-3 rounded-2">
 
       <form>
-        <div class="form-floating mb-2"> <input type="login" class="form-control" id="floatingLogin"
-            placeholder="Login"> <label for="floatingLogin">Login (min. 6 characters)</label> </div>
-        <div class="form-floating mb-2"> <input type="password" class="form-control" id="floatingPassword"
-            placeholder="Password"> <label for="floatingPassword">Password (min. 8 characters)</label> </div>
-        <div class="form-floating mb-2"> <input type="userName" class="form-control" id="floatingUserName"
-            placeholder="UserName"> <label for="floatingUserName">User Name</label> </div>
-        <div class="form-floating mb-2"> <input type="userSurname" class="form-control" id="floatingUserSurname"
-            placeholder="UserSurname"> <label for="floatingUserSurname">User Surname</label> </div>
+        <div class="input-group flex-nowrap mb-2">
+          <i class="bi bi-person-fill-lock input-group-text icon-size"></i>
+          <div class="form-floating"> <input type="string" class="form-control" id="userLogin" placeholder="Login">
+            <label for="userLogin">Login (min. 6 characters)</label>
+          </div>
+        </div>
+
+        <div class="input-group flex-nowrap mb-2">
+          <i class="bi bi-key-fill input-group-text icon-size"></i>
+          <div class="form-floating"> <input type="string" class="form-control" id="userPassword"
+              placeholder="Password">
+            <label for="userPassword">Password (min. 8 characters)</label>
+          </div>
+        </div>
+
+        <div class="input-group flex-nowrap mb-2">
+          <i class="bi bi-person-vcard input-group-text icon-size"></i>
+          <div class="form-floating"> <input type="string" class="form-control" id="userName" placeholder="UserName">
+            <label for="userName">User Name</label>
+          </div>
+        </div>
+
+        <div class="input-group flex-nowrap mb-2">
+          <i class="bi bi-person-vcard input-group-text icon-size"></i>
+          <div class="form-floating"> <input type="string" class="form-control" id="userSurname"
+              placeholder="UserSurname">
+            <label for="userSurname">User Surname</label>
+          </div>
+        </div>
+
         <div class="w-100 d-flex">
           <button class="btn btn-success w-50 py-2 me-1" data-bs-toggle="modal" data-bs-target="#registerModal"
             type="button">Register</button>
