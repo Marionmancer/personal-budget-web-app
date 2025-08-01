@@ -2,3 +2,5 @@
 *.mm
 *.uxf
 *.pdf
+/archive
+/projekt
